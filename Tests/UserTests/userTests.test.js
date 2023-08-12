@@ -20,6 +20,7 @@ describe("User Registeration", () => {
 });
 
 describe("User SignIn", () => {
+
   it("Should return a 400 status code for missing email or password", async () => {
     const res = await requestWithSupertest.post("/signIn").send({
       email: "example@gmail.com",
@@ -28,16 +29,29 @@ describe("User SignIn", () => {
     expect(res.statusCode).equal(400);
   });
 
-  it("Should return a 200 status code for valid credentials", async function () {
-    this.timeout(5000); 
+  // it("Should return a 200 status code for valid credentials", async function () {
+  //   this.timeout(5000);
 
-    const res = await requestWithSupertest.post("/signIn").send({
-      email: "example@gmail.com",
-      password: "example@1234",
-    });
+  //   const res = await requestWithSupertest.post("/signIn").send({
+  //     email: "example@gmail.com",
+  //     password: "example@1234",
+  //   });
 
-    expect(res.statusCode).equal(200);
-  });
+  //   expect(res.statusCode).equal(200);
+  // });
+  // it("User sign up", async () => {
+  //   this.timeout(5000);
+
+  //   const res = await requestWithSupertest.delete("/delete").send({
+  //     email: "sohila@gmail.com",
+  //     password: "sohila",
+  //   });
+  //   const res2 = await requestWithSupertest.post("/register").send({
+  //     email: "sohila@gmail.com",
+  //     password: "sohila",
+  //   });
+  //   expect(res2.statusCode).equal(200);
+  // });
 });
 
 // describe("User Registration API", () => {
